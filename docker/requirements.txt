@@ -1,0 +1,14 @@
+azure-mgmt-containerinstance==8.0.0
+azure-mgmt-streamanalytics>=1.0.0rc1
+azure-mgmt-eventhub==9.0.0
+azure-mgmt-cosmosdb==6.4.0
+azure-identity==1.6.0
+azure-mgmt-resource==15.0.0
+azure-mgmt-storage==16.0.0
+azure-functions==1.7.2
+azure-functions-durable==1.0.3
+azure-eventhub==5.6.0
+azure-cosmosdb-table==1.0.6
+azure-cosmos==4.2.0
+torch>=1.8.0
+torchvision
