@@ -44,7 +44,7 @@
             }
         },
         "os_type": "Linux",
-        "restart_policy": "OnFailure",
+        "restart_policy": "Never",
         "volumes": [
             {
                 "name": "empty-volume",
