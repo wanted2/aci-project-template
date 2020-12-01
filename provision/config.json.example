@@ -1,0 +1,127 @@
+{
+    "subscription_id": "",
+    "resource_group_name": "",
+    "container_group_name": "",
+    "container_name": "CONTAINER_NAME",
+    "container_params": {
+        "location": "eastus",
+        "identity": {
+            "type": "SystemAssigned"
+        },
+        "containers": [
+            {
+                "name": "CONTAINER_NAME",
+                "command": [],
+                "environment_variables": [],
+                "image": "my-nvidia-image",
+                "ports": [
+                    {
+                        "port": "80"
+                    }
+                ],
+                "resources": {
+                    "requests": {
+                        "cpu": "1",
+                        "memory_in_gb": "1.5",
+                        "gpu": {
+                            "count": "1",
+                            "sku": "K80"
+                        }
+                    }
+                },
+                "volume_mounts": [
+                    {
+                        "name": "empty-volume",
+                        "mount_path": "/mnt/mydir"
+                    }
+                ]
+            }
+        ],
+        "diagnostics": {
+            "log_analytics": {
+                "workspace_id": "workspaceid",
+                "workspace_key": "workspaceKey"
+            }
+        },
+        "os_type": "Linux",
+        "restart_policy": "OnFailure",
+        "volumes": [
+            {
+                "name": "empty-volume",
+                "empty_dir": {}
+            }
+        ],
+        "tags": {
+            "tag1key": "tag1Value",
+            "tag2key": "tag2Value"
+        }
+    },
+    "resource_group_params": {
+        "location": "eastus"
+    },
+    "database_account": "",
+    "database_params": {
+        "location": "eastus",
+        "kind": "GlobalDocumentDB",
+        "database_account_offer_type": "Standard",
+        "locations": [
+            {
+                "location_name": "eastus",
+                "is_zone_redundant": 0,
+                "failover_priority": "0"
+            }
+        ],
+        "capabilities": [
+            {
+                "name": "EnableTable"
+            }
+        ],
+        "api_properties": {}
+    },
+    "database_table_name": "",
+    "database_table_params": {
+        "location": "eastus",
+        "resource": {
+            "id": "TABLE_NAME"
+        },
+        "options": {}
+    },
+    "storage_account_name": "",
+    "storage_params": {
+        "sku": {
+            "name": "Standard_LRS"
+        },
+        "kind": "StorageV2",
+        "location": "eastus"
+    },
+    "eventhub_namespace": "",
+    "eventhub_namespace_params": {
+        "sku": {
+            "name": "Standard",
+            "tier": "Standard"
+        },
+        "location": "South Central US",
+        "tags": {
+            "tag1": "value1",
+            "tag2": "value2"
+        }
+    },
+    "eventhub_name": "",
+    "eventhub_params": {
+        "message_retention_in_days": "1",
+        "partition_count": "4",
+        "status": "Active",
+        "capture_description": {
+            "enabled": 1,
+            "encoding": "Avro",
+            "interval_in_seconds": "120",
+            "size_limit_in_bytes": "10485763",
+            "destination": {
+                "name": "EventHubArchive.AzureBlockBlob",
+                "storage_account_resource_id": "/subscriptions/SUBSCRIPTION_NAME/resourceGroups/GROUP_NAME/providers/Microsoft.Storage/storageAccounts/STORAGE_ACCOUNT_NAME",
+                "blob_container": "container",
+                "archive_name_format": "{Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}"
+            }
+        }
+    }
+}
